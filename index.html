@@ -33,7 +33,9 @@
         <div class="container py-[50px]  m-auto text-white">
             <div class="flex justify-between items-center">
                 <img src="img/logo.png" class="w-[158px]  ml-[10px] " alt="logo">
+
                 <div class="md:flex md:gap-4   font-poppins hidden md:mt-[10px]">
+
                     <nav class="flex gap-4   list-none">
                         <li><a href="">Home</a></li>
                         <li><a href="">Our Shop</a></li>
@@ -42,15 +44,18 @@
                     </nav>
                     <button class="px-6 py-2 rounded-4xl  bg-[#ee626b] font-poppins font-semibold uppercase">Sign
                         In</button>
+                    <i class="basket fa-light fa-cart-shopping  text-2xl"></i>
                 </div>
-                <div class="mx-[10px] md:hidden flex items-center">
-                    <i class="fa-solid fa-align-left text-3xl"></i>
+
+                <div class="mx-[10px] md:hidden flex gap-4 items-center">
+                    <i class="basket fa-light fa-cart-shopping text-2xl "></i>
+                    <i class="fa-light fa-align-left text-3xl"></i>
                 </div>
             </div>
         </div>
         <div class="container  m-auto">
             <div class="md:grid md:grid-cols-6   grid-cols-1 md:text-left text-center  pt-[70px] pb-[200px]">
-                <div class="text-white  flex flex-col md:col-span-3  mr-[5px] justify-center">
+                <div class="text-white  flex flex-col md:col-span-3 ml-[10px]  mr-[5px] justify-center">
                     <p class="font-semibold uppercase text-lg">Welcome to lugx</p>
                     <p class="text-5xl uppercase font-bold mt-[20px] mb-[40px] whitespace-normal">
                         BEST GAMING SITE EVER!
@@ -123,36 +128,46 @@
             </div>
 
         </div>
-        <div class="my-[120px]" >
+        <div class="my-[120px]">
             <div class="container m-auto ">
+<div class="mx-[4px]  ">
+         <p class="text-[#ee626b] font-extrabold uppercase mb-[15px] text-sm">Trending</p>
+                <div class="flex justify-between">
+                    <h3 class="font-bold  text-4xl">Trending Games</h3>
+                    <button class="bg-[#ee626b] md:px-[20px] md:py-[10px]  p-[10px]  text-white rounded-4xl hover:bg-[#008af8]">View All</button>
+                </div>
+</div>
+       
+                <div class=" cards mt-[50px] grid md:grid-cols-4 place-items-center grid-cols-1">
 
-            <p class="text-[#ee626b] font-extrabold uppercase mb-[15px] text-sm">Trending</p>
-            <div class="flex justify-between">
- <h3 class="font-bold  text-4xl">Trending Games</h3>
-            <button class="bg-[#ee626b] px-[20px] py-[10px]  text-white rounded-4xl ">View All</button>
+                </div>
+             
             </div>
-              <div class="cards"></div>
         </div>
-        </div>
-            <div class="container m-auto ">
-            <p class="text-[#ee626b] font-extrabold uppercase mb-[15px] text-sm">TOP GAMES</p>
+        <div class="container m-auto ">
+            <div class="mx-[18px]">
+  <p class="text-[#ee626b] font-extrabold uppercase mb-[15px] text-sm">TOP GAMES</p>
             <div class="flex justify-between">
- <h3 class="font-bold  text-4xl">Most Played</h3>
-            <button class="bg-[#ee626b] px-[20px] py-[10px]  text-white rounded-4xl ">View All</button>
+                <h3 class="font-bold  text-4xl">Most Played</h3>
+                <button class="bg-[#ee626b] md:px-[20px] md:py-[10px]  p-[10px]  text-white rounded-4xl  hover:bg-[#008af8]">View All</button>
             </div>
-           <div class="cards2"></div>
+            </div>
+          
+            <div class="cards2"></div>
         </div>
-        
+
     </main>
     <footer class="min-h-[25vh] md:rounded-t-full rounded-t-[50px] overflow-hidden text-white">
         <div class="container m-auto">
-            <p class="text-center py-5 leading-relaxed md:text-lg">
+            <p class="text-center py-4 md:mt-[70px] leading-relaxed md:text-lg">
                 Copyright © 2048 LUGX Gaming Company. All rights reserved. Design: TemplateMo
 
             </p>
         </div>
 
     </footer>
+    <script src="js/data.js"></script>
+    <script src="js/app.js"></script>
 </body>
 
 </html>
