@@ -10,10 +10,8 @@ cards.innerHTML+=`
 <p>${item.category}</p>
 <h5>${item.title}</h5>
 </div>
-
 <i class="fa-solid fa-bag-shopping  items-center"></i>
 </div>
-
 </div>
 
 `
@@ -22,3 +20,19 @@ cards.innerHTML+=`
 )
 }
 showcards()
+function showcards2(){
+mostPlayedGames.map(item=>{
+cards2.innerHTML+=`
+<div class="">
+<img src="${item.image}" class="rounded-4xl " />
+<div class="my-[13px]  text-center   mx-[30px] ">
+<p>${item.category}</p>
+<h5>${item.title}</h5>
+ <button class="bg-[#ee626b] md:px-[20px] md:py-[7px]  p-[10px]  text-white rounded-4xl  hover:bg-[#008af8]">Explore</button>
+</div>
+</div>
+`
+}
+)
+}
+showcards2()

@@ -778,6 +778,16 @@
       padding-inline: 20px;
     }
   }
+  .md\:py-\[5px\] {
+    @media (width >= 48rem) {
+      padding-block: 5px;
+    }
+  }
+  .md\:py-\[7px\] {
+    @media (width >= 48rem) {
+      padding-block: 7px;
+    }
+  }
   .md\:py-\[10px\] {
     @media (width >= 48rem) {
       padding-block: 10px;
