@@ -2,18 +2,17 @@ let cards = document.querySelector(".cards")
 let cards2 = document.querySelector(".cards2")
 let basket = document.querySelector(".basket")
 let basketcart = document.querySelector(".basketcart")
-let cardsforbasket = document.querySelector(".cardsforbasket")
 function showcards() {
     trendingGames.map(item => {
         cards.innerHTML += `
 <div class="">
 <div  class="relative">
 <img src="${item.image}" class=" rounded-4xl " />
-      <button  class="absolute flex flex-col right-[20px] top-[40px] md:right-5 md:top-5 text-white bg-[#008af8] text-lg py-1 px-4 rounded-xl font-semibold">${ item.oldPrice
-      ? `<span class="line-through text-sm">$  ${item.oldPrice}</span>
+      <button  class="absolute flex flex-col right-[20px] top-[40px] md:right-5 md:top-5 text-white bg-[#008af8] text-lg py-1 px-4 rounded-xl font-semibold">${item.oldPrice
+                ? `<span class="line-through text-sm">$  ${item.oldPrice}</span>
          <span>$ ${item.price}</span>`
-      : `<span> $ ${item.price}</span>`
-      }</button>
+                : `<span> $ ${item.price}</span>`
+            }</button>
 </div>
 <div class="my-[13px] flex  justify-between  flex-col mx-[30px] ">
 <p class="text-[#7a7a7a] ">${item.category}</p>
@@ -48,36 +47,51 @@ function showcards2() {
     )
 }
 showcards2()
-function openbasket(){
-basketcart.style.right='0'
-showbasket()
+function openbasket() {
+    basketcart.style.right = '0'
+    showbasket()
 }
-function showbasket(){
-    trendingGames.map(item=>{
-  cardsforbasket.innerHTML+=`
-          <div class="sm:col-span-2 flex sm:items-center max-sm:flex-col gap-6">
-                            <div class="w-24 h-24 shrink-0 bg-white p-2 rounded-md">
-                                <img src='https://readymadeui.com/images/watch5.webp' class="w-full h-full object-contain" />
+let basketarray=[]
+function showbasket() {
+   let totalprice=basketarray.reduce((sum,item)=> sum+=item.price,0)
+   basketcart.innerHTML = ""
+basketcart.innerHTML += `
+   <div class="h-full flex flex-col justify-between">
+            <div> <i onclick="closebasket()" class="fa-solid fa-xmark text-2xl cursor-pointer p-2 text-black  block text-right"></i>
+            </div>
+                <div class="p-4 flex  flex-col gap-4">
+                    ${basketarray.length > 0
+            ? basketarray.map(item => `
+                            <div class="flex items-center mb-3 border-b pb-2">
+                                <img src="${item.image}" alt="${item.title}" class="w-[140px] h-[200px] object-contain">
+                                    <div class="px-2 flex flex-col gap-4">
+                                         <p class="text-sm font-semibold ">${item.title}</p>
+                                          <p class="text-gray-500">$${(item.price ).toFixed(2)}</p>
+                                    <div class="flex items-center gap-2">
+                                         <button onclick="" class="border px-2 rounded">-</button>
+                                            <span></span>
+                                         <button onclick="" class="border px-2 rounded">+</button>
+                                         <p onclick="" class="text-red-500 ml-2">Remove</p>
+                                    </div>
                             </div>
-                            <div>
-                                <h4 class="text-[15px] font-semibold text-slate-900">Smart Watch Timex</h4>
-                                <h6 class="text-xs font-medium text-red-500 cursor-pointer mt-1">Remove</h6>
-                           
-                                    <div class="flex items-center text-black  gap-2 mt-1 border border-gray-300 px-2 py-1 rounded-md w-max">
-    <button class="text-lg ">-</button>
-    <span class="px-2">1</span>
-    <button class="text-lg ">+</button>
-  </div>
-                        </div>
-                        </div>
-                        <div class="sm:ml-auto">
-                            <h4 class="text-[15px] font-semibold text-slate-900">$120.00</h4>
-                        </div>
+             </div>
+                        `).join('')
+            : '<p class="text-gray-500 text-center mt-10 text-2xl">Səbət boşdur</p>'}
+                </div>
+                <div class="flex flex-col justify-end " >
+                     <div class="flex justify-between items-center text-black mx-9">
+                    <p class="text-xl">Total</p>
+                    <h2 class="font-bold text-xl flex items-start">$ ${totalprice.toFixed(2)}</h2>
+                </div>
+                <button class="bg-[#ee626b] w-[80%] my-5 mx-auto flex gap-3 items-center justify-center text-white px-4 py-2 rounded">
+                    Complete your order
+                </button>
+                </div>
+             
+            </div>
     `
-    })
-  
 }
-function closebasket(){
-basketcart.style.right='-100%';
+function closebasket() {
+    basketcart.style.right = '-100%';
 
 }
